@@ -49,7 +49,7 @@ public class NamTeleCompany {
                     phonebook.updateContact(updateName, newNumber);
                     break;
                 case 6:
-                    phonebook.sortContacts();
+                    phonebook.bubbleSortContacts();
                     phonebook.displayContacts();
                     break;
                 case 0:
