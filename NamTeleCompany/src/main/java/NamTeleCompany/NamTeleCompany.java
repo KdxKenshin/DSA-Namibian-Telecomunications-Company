@@ -6,7 +6,7 @@ public class NamTeleCompany {
         Scanner sc = new Scanner(System.in);
           Phonebook phonebook = new Phonebook();
         int num;
-        
+        try{
          do {
             System.out.println("\nPhonebook Menu:");
             System.out.println("1. Insert Contact");
@@ -56,12 +56,12 @@ public class NamTeleCompany {
                     phonebook.displayContacts();
                     break;
                 case 7:
-                    System.out.print("Enter name to mark as favourite:");
+                    System.out.print("Enter name to mark as favourite: ");
                     String fName = sc.nextLine();
                     phonebook.markAsFavourite(fName);
                     break;
                 case 8:
-                    System.out.print("Enter name to unmark as favourite:");
+                    System.out.print("Enter name to unmark as favourite: ");
                     String ufName = sc.nextLine();
                     phonebook.unmarkAsFavorite(ufName);
                     break;
@@ -77,5 +77,9 @@ public class NamTeleCompany {
         } while (num != 0);
 
         sc.close();
+    }
+    catch (Exception e) {
+            System.out.println("An Error Occured while running the program" + " " + e.getMessage());
+        }
     }
 }

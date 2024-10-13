@@ -8,11 +8,15 @@ public class Phonebook {
     }
 
     public void insertContact(String name, String number) {
+        try{
         contacts.add(new Contacts(name, number));
-        System.out.println("Contact inserted: " + name + "-" + number);
+        System.out.println("Contact inserted: " + name + " - " + number);
+    } catch (Exception e) {
+            System.out.println("An error occurred while inserting contact: " + " " + e.getMessage());
+        }
     }
-    
     public void searchContact(String name) {
+        try{
         for (Contacts contact : contacts) {
             if (contact.name.equals(name)) {
                 System.out.println("Contact found: " + contact.name + " - " + contact.number);
@@ -20,9 +24,13 @@ public class Phonebook {
             }
         }
         System.out.println("Contact not found.");
+        } catch (Exception e) {
+            System.out.println("An error occurred while searching for the contact: " + " " + e.getMessage());
+        }
     }
 
     public void displayContacts() {
+        try{
         if (contacts.isEmpty()) {
             System.out.println("No contacts available.");
             return;
@@ -30,9 +38,13 @@ public class Phonebook {
         for (Contacts contact : contacts) {
             System.out.println(contact.name + " - " + contact.number);
         }
+        } catch (Exception e) {
+            System.out.println("An error occurred while displaying contacts: " + " " + e.getMessage());
+        }
     }
 
     public void deleteContact(String name) {
+        try{
         for (int i = 0; i < contacts.size(); i++) {
             if (contacts.get(i).name.equals(name)) {
                 contacts.remove(i);
@@ -41,9 +53,13 @@ public class Phonebook {
             }
         }
         System.out.println("Contact not found.");
+    } catch (Exception e) {
+            System.out.println("An error occurred while deleting contact: " + " " + e.getMessage());
+        }
     }
 
     public void updateContact(String name, String newNumber) {
+        try{
         for (Contacts contact : contacts) {
             if (contact.name.equals(name)) {
                 contact.number = newNumber;
@@ -52,9 +68,13 @@ public class Phonebook {
             }
         }
         System.out.println("Contact not found.");
+        }catch (Exception e) {
+            System.out.println("An error occurred while updating contact: " + " " + e.getMessage());
+        }
     }
     
      public void bubbleSortContacts() {
+         try{
         int n = contacts.size();
         if (n <= 1) {
             System.out.println("Nothing to sort.");
@@ -71,9 +91,13 @@ public class Phonebook {
             }
         }
         System.out.println("Contacts sorted:");
+         }catch (Exception e) {
+            System.out.println("An error occurred while sorting contacts: " + " " + e.getMessage());
+        }
     }
     
      public void markAsFavourite(String name) {
+         try{ 
         for (Contacts contact : contacts) {
             if (contact.name.equals(name)) {
                 contact.setFavourite(true);
@@ -82,9 +106,13 @@ public class Phonebook {
             }
         }
         System.out.println("Contact not found.");
+         }catch (Exception e) {
+            System.out.println("An error occurred while marking favourite contact: " + " " + e.getMessage());
+        }
     }
      
      public void unmarkAsFavorite(String name) {
+         try{
         for (Contacts contact : contacts) {
             if (contact.name.equals(name)) {
                 contact.setFavourite(false);
@@ -93,9 +121,13 @@ public class Phonebook {
             }
         }
         System.out.println("Contact not found.");
+         }catch (Exception e) {
+            System.out.println("An error occurred while unmarking favourite contact: " + " " + e.getMessage());
+        }
     } 
      
      public void displayFavourites() {
+         try{
         boolean hasFavourites = false;
         for (Contacts contact : contacts) {
             if (contact.isFavourite()) {
@@ -106,7 +138,9 @@ public class Phonebook {
         if (!hasFavourites) {
             System.out.println("No favorite contacts available.");
         }
-    }
-     
+         }catch (Exception e) {
+            System.out.println("An error occurred while displaying favourite contacts: " + " " + e.getMessage());
+        }
+         
+    }    
 }
-
