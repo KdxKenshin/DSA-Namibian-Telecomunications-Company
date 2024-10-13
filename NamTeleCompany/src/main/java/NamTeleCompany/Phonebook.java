@@ -9,7 +9,7 @@ public class Phonebook {
 
     public void insertContact(String name, String number) {
         contacts.add(new Contacts(name, number));
-        System.out.println("Contact inserted: " + name);
+        System.out.println("Contact inserted: " + name + "-" + number);
     }
     
     public void searchContact(String name) {
@@ -53,8 +53,8 @@ public class Phonebook {
         }
         System.out.println("Contact not found.");
     }
-
-    public void bubbleSortContacts() {
+    
+     public void bubbleSortContacts() {
         int n = contacts.size();
         if (n <= 1) {
             System.out.println("Nothing to sort.");
