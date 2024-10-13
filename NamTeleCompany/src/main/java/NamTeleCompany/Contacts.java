@@ -6,10 +6,16 @@ public class Contacts {
     boolean isFavourite;
     
     Contacts(String name, String number){
+          try{
     this.name = name;
     this.number = number;
     this.isFavourite = false;
     }
+      catch (Exception e) {
+            System.out.println("An error occurred " + " " + e.getMessage());
+        }
+    }
+    
      public void setFavourite(boolean isFavourite) {
         this.isFavourite = isFavourite;
     }
