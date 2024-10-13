@@ -69,7 +69,7 @@ public class Phonebook {
                 }
             }
         }
-        System.out.println("Contacts sorted Alphabeitically:");
+        System.out.println("Contacts sorted:");
     }
 }
 
