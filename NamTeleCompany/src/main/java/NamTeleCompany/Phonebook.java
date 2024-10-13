@@ -11,7 +11,7 @@ public class Phonebook {
         contacts.add(new Contacts(name, number));
         System.out.println("Contact inserted: " + name);
     }
-
+    
     public void searchContact(String name) {
         for (Contacts contact : contacts) {
             if (contact.name.equals(name)) {
@@ -47,16 +47,66 @@ public class Phonebook {
         for (Contacts contact : contacts) {
             if (contact.name.equals(name)) {
                 contact.number = newNumber;
-                System.out.println("Contact updated: " + name);
+                System.out.println("Contact has been updated: " + name);
                 return;
             }
         }
         System.out.println("Contact not found.");
     }
 
-    public void sortContacts() {
-        contacts.sort((c1, c2) -> c1.name.compareToIgnoreCase(c2.name));
-        System.out.println("Contacts sorted.");
+    public void bubbleSortContacts() {
+        int n = contacts.size();
+        if (n <= 1) {
+            System.out.println("Nothing to sort.");
+            return;
+        }
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - 1 - i; j++) {
+                if (contacts.get(j).name.compareToIgnoreCase(contacts.get(j + 1).name) > 0) {
+                    // Swap contacts
+                    Contacts temp = contacts.get(j);
+                    contacts.set(j, contacts.get(j + 1));
+                    contacts.set(j + 1, temp);
+                }
+            }
+        }
+        System.out.println("Contacts sorted:");
     }
+    
+     public void markAsFavourite(String name) {
+        for (Contacts contact : contacts) {
+            if (contact.name.equals(name)) {
+                contact.setFavourite(true);
+                System.out.println(name + " has been marked as a favourite.");
+                return;
+            }
+        }
+        System.out.println("Contact not found.");
+    }
+     
+     public void unmarkAsFavorite(String name) {
+        for (Contacts contact : contacts) {
+            if (contact.name.equals(name)) {
+                contact.setFavourite(false);
+                System.out.println(name + " has been unmarked as a favourite.");
+                return;
+            }
+        }
+        System.out.println("Contact not found.");
+    } 
+     
+     public void displayFavourites() {
+        boolean hasFavourites = false;
+        for (Contacts contact : contacts) {
+            if (contact.isFavourite()) {
+                System.out.println(contact);
+                hasFavourites = true;
+            }
+        }
+        if (!hasFavourites) {
+            System.out.println("No favorite contacts available.");
+        }
+    }
+     
 }
 

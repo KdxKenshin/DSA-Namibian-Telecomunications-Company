@@ -15,6 +15,9 @@ public class NamTeleCompany {
             System.out.println("4. Delete Contact");
             System.out.println("5. Update Contact");
             System.out.println("6. Sort Contacts");
+            System.out.println("7. Mark As Favourite");
+            System.out.println("8. Unmark As Favourite");
+            System.out.println("9. Display Favourite Contacts");
             System.out.println("0. Exit");
             System.out.print("Enter your choice: ");
             num = sc.nextInt();
@@ -49,14 +52,27 @@ public class NamTeleCompany {
                     phonebook.updateContact(updateName, newNumber);
                     break;
                 case 6:
-                    phonebook.sortContacts();
+                    phonebook.bubbleSortContacts();
                     phonebook.displayContacts();
                     break;
+                case 7:
+                    System.out.print("Enter name to mark as favourite:");
+                    String fName = sc.nextLine();
+                    phonebook.markAsFavourite(fName);
+                    break;
+                case 8:
+                    System.out.print("Enter name to unmark as favourite:");
+                    String ufName = sc.nextLine();
+                    phonebook.unmarkAsFavorite(ufName);
+                    break;
+                case 9:
+                    phonebook.displayFavourites();
+                    break;
                 case 0:
-                    System.out.println("Exiting Phonebook.");
+                    System.out.print("Exiting Phonebook.");
                     break;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    System.out.print("Invalid choice. Please try again.");
             }
         } while (num != 0);
 
