@@ -1,7 +1,7 @@
 This project implements a phonebook application for NamTeleCompany, providing essential 
 functionalities such as inserting, searching, updating, deleting, and sorting contacts. Users can also mark 
 contacts as favourites and display either all contacts or only their favourites. The implementation uses 
-simple linear data structures like ArrayList and basic algorithms, focusing on delivering an efficient, easyto-use system
+simple linear data structures like ArrayList and basic algorithms, focusing on delivering an efficient, easy to-use system
 
 Features
 Insert Contact: Add a new contact to the phonebook.
@@ -13,7 +13,6 @@ Mark as Favourite: Mark a contact as a favourite.
 Unmark as Favourite: Remove a contact from the favourites list.
 Display Contacts: Show all contacts in the phonebook.
 Display Favourite Contacts: Show only favourite contacts.
-Technologies Used
 Programming Language: Java
 Data Structures: ArrayList
 
@@ -40,12 +39,21 @@ Enter name: John Doe
 Enter number: 0812345678
 Contact Inserted: John Doe - 0812345678
 
-Erastus Tomas: Core logic development and testing.
+
+Contributor information and their roles in the project:
+
+Erastus Tomas: Core logic development and testing. 
+
 Kevin Iita: Function implementation and testing.
+
 Armas Shilongo: User interface and input handling.
+
 Nickson Uauleni: Flowchart design and algorithm development
+
 Nyambe Sepiso: Pseudocode design and algorithm development.
+
 Petrus Elago: Error handling and code documentation.
+
 
 Below is our documentation file: 
 [DSA Documentation.pdf](https://github.com/user-attachments/files/17363899/DSA.Documentation.pdf)
